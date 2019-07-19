@@ -20,6 +20,7 @@ https://arxiv.org/abs/1904.01058
 ## How to train Tree Boosted VCM
 
 1. Load `lgd.R`.
+
 2. Create an empty `lgd` model. We take Beijing Housing data as an example:
 ```r
 model <- list()           # Create an empty model.
@@ -39,16 +40,19 @@ model$control <- rpart.control(maxdepth = 5, cp = 0)  # [control] is an [rpart.c
 model$woods <- list()     # [woods] is initialized as emplty for remembering the boosting history. 
 ```
 Another set of arguments can be used for logistic regression, including `lg.diff`, `lg.init.beta`, `lg.pred`, and `lg.loss`. 
+
 3. There are some other arguments that can be set:
 ```r
 model$savetree            # [savetree] is whether the ensemble is saved. Set to [FALSE] when no need to make predictions.
 model$method              # [method] is the method to boost. Now only [ordinary] works. Please leave empty.
 ```
+
 4. Train by calling `lgd()` to get a trained lgd model. For instance
 ```r
 res <- lgd(y=y, x=x, z=z, model=model)
 ```
 Here `x` is the predictive covariates, arranged in an n by p matrix. `z` is the action covariates in an n by q matrix, `y` is a n-vector representing the response.
+
 5. Inspect the result. For instance, the structure of this trained `res` is 
 ```r
 res$yhat    # [yhat] is the fitted y values of the training data. 
