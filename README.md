@@ -1,4 +1,9 @@
-# treeboostVCM
+# Readme: Manual
+
+This repo holds the supplementary code for the arXiv submission *Tree Boosted Varying Coefficient Models*
+
+https://arxiv.org/abs/1904.01058
+
 
 List of files in this repo:
 
