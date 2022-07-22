@@ -17,6 +17,8 @@ https://arxiv.org/abs/1904.01058
 
 + accuracy.R : Code for evaluating the predictive accuracy of the method on several UCI datasets.
 
++ DMKD_sims.zip : All code and data for reproducing DMKD simulation results.
+
 ## How to train Tree Boosted VCM
 
 1. Load `lgd.R`.
