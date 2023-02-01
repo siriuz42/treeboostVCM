@@ -295,7 +295,7 @@ lgd <- function(y, x, z, model) {
     return(model)
 }
 
-lgd.predict <- function(x, z, model, flag = FALSE) {
+lgd.predict <- function(x, z, model, return.coefficients=FALSE, flag = FALSE) {
     if (model$dummy) {
         x <- cbind(1, x)
     }
@@ -329,5 +329,12 @@ lgd.predict <- function(x, z, model, flag = FALSE) {
             tmpBeta = tmpBeta * (1 + model$lambda) / model$lambda 
         }
     }
-    return(model$pred(x, tmpBeta))
+    if (return.coefficients) {
+        return_tuple <- list()
+        return_tuple$pred <- model$pred(x, tmpBeta)
+        return_tuple$coef <- tmpBeta
+        return(return_tuple)
+    } else {
+        return(model$pred(x, tmpBeta))
+    }
 }
