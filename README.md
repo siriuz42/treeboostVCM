@@ -70,4 +70,4 @@ newPred <- lgd.predict(x=predX, z=predZ, model=res)
 ```
 Here `x` is the new predictive covariates, `z` is the new action covaraites, and `model` is the trained model. There are a couple of examples in `accuracy.R`.
 
-Current there is no output for the predicted coefficients. Please contact the authors (yichenzhou% at google% dot com% with % removed) and they will patch the code asap.
+Please contact the authors (yichenzhou% at google% dot com% with % removed) for any questions and feature requests.
